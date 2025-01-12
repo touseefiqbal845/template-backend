@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 const connectDB = () => {
   console.log('Attempting to connect to MongoDB...');
 mongoose
-  .connect("mongodb+srv://touseefiqbal845:Punjabuni321@easypickercluster.pzxaxac.mongodb.net/?retryWrites=true&w=majority&appName=easyPickerCluster")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => {
     console.error(`MongoDB connection error: ${err.message}`);
