@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 const connectDB = () => {
   console.log('Attempting to connect to MongoDB...');
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => {
     console.error(`MongoDB connection error: ${err.message}`);
