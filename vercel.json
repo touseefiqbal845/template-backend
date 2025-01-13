@@ -1,17 +1,188 @@
 {
-    "version": 2,
-    "builds": [
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "build/**",
+      "use": "@vercel/static" 
+    }
+  ],
+  "routes": [
+    {
+      "src": "/all-products",
+      "dest": "index.js"
+    },
+    {
+      "src": "/all-products/(.*)",
+      "dest": "index.js"
+    },
       {
-        "src": "index.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
+      "src": "/all-products/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/categories",
+      "dest": "index.js"
+    },
+    {
+      "src": "/categories/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/brands",
+      "dest": "index.js"
+    },
+    {
+      "src": "/brands/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/users",
+      "dest": "index.js"
+    },
+    {
+      "src": "/users/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/auth",
+      "dest": "index.js"
+    },
+    {
+      "src": "/auth/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/carts",
+      "dest": "index.js"
+    },
+    {
+      "src": "/carts/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/orders",
+      "dest": "index.js"
+    },
+    {
+      "src": "/orders/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/webhook",
+      "dest": "index.js"
+    },
+    {
+      "src": "/create-payment-intent",
+      "dest": "index.js"
+    },
+    {
+      "src": "/",
+      "dest": "build/index.html"
+    },
+        {
+      "src": "/login",
+      "dest": "build/index.html"
+    },
+        {
+  "src": "/logout",
+  "dest": "build/index.html"
+},
+    {
+  "src": "/signup",
+  "dest": "build/index.html"
+},
+    {
+  "src": "/products",
+  "dest": "build/index.html"
+},
+        {
+  "src": "/contact-us",
+  "dest": "build/index.html"
+},
+    {
+  "src": "/about-us",
+  "dest": "build/index.html"
+},
+    {
+  "src": "/cart",
+  "dest": "build/index.html"
+},
+    {
+  "src": "/checkout",
+  "dest": "build/index.html"
+},
+    {
+  "src": "/admin",
+  "dest": "build/index.html"
+},
+        {
+  "src": "/product-detail/(.*)",
+  "dest": "build/index.html"
+},
+        {
+  "src": "/admin/product-detail/(.*)",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/admin/orders-charts",
+  "dest": "build/index.html"
+},
+
+     {
+  "src": "/admin/product-form",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/admin/orders",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/admin/product-form/edit/(.*)",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/order-success/(.*)",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/profile",
+  "dest": "build/index.html"
+},
       {
-        "src": "/(.*)",
-        "dest": "index.js"
-      }
-    ]
-   
+  "src": "/my-orders",
+  "dest": "build/index.html"
+},
+
+     {
+  "src": "/stripe-checkout",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/forgot-password",
+  "dest": "build/index.html"
+},
+     {
+  "src": "/reset-password",
+  "dest": "build/index.html"
+},
+      {
+    "src": "/(.+)",
+    "dest": "build/$1"
   }
-  
+
+
+],
+"env": {
+  "MONGO_DB_URL": "mongodb+srv://touseefhacker:touseefhacker@cluster0.fachd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "PORT": "https://tasky-backend-eosin.vercel.app/",
+  "JWT_SECRET_KEY": "PUNJABUNI321",
+  "SESSION_SECRET_KEY": "SESSION_KEY",
+  "END_POINT": "whsec_DFVIFC758MRfdUayDI36qhNnWUuEwOAY",
+  "DB_PASSWORD": "Punjabuni321",
+  "MAIL_PASSWORD": "whdm wpxa jrar zzvl"
+}
+}
+

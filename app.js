@@ -1,8 +1,17 @@
-const express = require('express');
-const loadServices = require('./src/loaders');
+const express = require("express");
+const cors = require("cors");
+const loaders = require("./loaders");
+const errorHandler = require("./utils/errorHandler");
 
 const app = express();
 
-loadServices(app);
+
+const startApp = async () => {
+  await loaders(app); 
+  app.use(errorHandler);
+  console.log("Application initialized.");
+};
+
+startApp();
 
 module.exports = app;
