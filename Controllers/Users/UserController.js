@@ -9,7 +9,7 @@ const {
 
 const createUser = async (req, res) => {
   try {
-  // console.log("user in login", user);
+  console.log("user in login1",req);
 
     const salt = crypto.randomBytes(16);
     crypto.pbkdf2(
@@ -20,7 +20,11 @@ const createUser = async (req, res) => {
       "sha256",
       async function (err, hashedPassword) {
         const user = new User({ ...req.body, password: hashedPassword, salt });
+  console.log("user in login2",user);
+
         const doc = await user.save();
+        console.log("user in login3",doc);
+
 
         req.login(sanitizeUser(doc), (err) => {
           if (err) {
