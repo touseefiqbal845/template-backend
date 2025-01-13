@@ -1,5 +1,5 @@
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
+// const MongoStore = require('connect-mongo');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -9,7 +9,7 @@ const sessionConfig = (app) => {
     secret: 'session',
     resave: false,
     saveUninitialized: false,  // Set to false to avoid creating empty sessions
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_DB_URL }),
+    // store: MongoStore.create({ mongoUrl: process.env.MONGO_DB_URL }),
     cookie: {
       httpOnly: true,    // Prevents access via JavaScript
       secure: false,     // Set to true in production with HTTPS

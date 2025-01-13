@@ -4,14 +4,14 @@ const LocalStrategy = require("passport-local").Strategy;
 const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const User = require("../modals/User");
-const JWT_SECRET = process.env.JWT_SECRET_KEY;
+// const JWT_SECRET = process.env.JWT_SECRET_KEY;
 
 const passportConfig = () => {
   passport.use(
     "jwt",
     new JwtStrategy(
       {
-        secretOrKey: JWT_SECRET,
+        secretOrKey: 'jjj',
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       },
       async (payload, done) => {

@@ -17,11 +17,7 @@ const expressLoader = (app) => {
 
 
   
-  app.use(cors({
-    origin: 'https://template-backend-beige.vercel.app', // Allow frontend origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-    credentials: true, // If cookies or authorization headers are used
-  }));
+  app.use(cors());
   app.use(cookieParser());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
