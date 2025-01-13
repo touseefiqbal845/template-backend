@@ -1,32 +1,36 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const express = require('express');
-// const connectDB = require('');
+
+
+
+const express = require("express");
+const path = require("path");
+const loaders = require("./loaders");
+const errorHandler = require("./utils/errorHandler");
 
 const app = express();
 
-// Middleware
-app.use(express.json());
 
-// Database Connection
+const startApp = async () => {
+  await loaders(app); 
+  app.use(errorHandler);
+  console.log("Application initialized.");
+};
 
-// Test Route
-app.get('/', (req, res) => {
-  res.status(200).send('API is running successfully');
+startApp();
+
+// Optional static file serving, if needed for frontend
+app.use(express.static(path.resolve(__dirname, 'build')));
+app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+
+
+// Start the server
+const PORT =  "https://template-backend-beige.vercel.app/";
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+app.get("/", (req, res) => {
+  console.log("Success");
+  res.send("Hello, World!"); 
 });
 
-const connectDB = () => {
-  console.log('Attempting to connect to MongoDB...');
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch((err) => {
-    console.error(`MongoDB connection error: ${err.message}`);
-    process.exit(1);
-  });
-};
-connectDB()
 
-// Start the Server
-const PORT =  5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
