@@ -23,7 +23,7 @@ app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 
 
 // Start the server
-const PORT =  "5002";
+const PORT =  "https://template-backend-beige.vercel.app/";
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
