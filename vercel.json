@@ -174,15 +174,6 @@
   }
 
 
-],
-"env": {
-  "MONGO_DB_URL": "mongodb+srv://touseefhacker:touseefhacker@cluster0.fachd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-  "PORT": "https://tasky-backend-eosin.vercel.app/",
-  "JWT_SECRET_KEY": "PUNJABUNI321",
-  "SESSION_SECRET_KEY": "SESSION_KEY",
-  "END_POINT": "whsec_DFVIFC758MRfdUayDI36qhNnWUuEwOAY",
-  "DB_PASSWORD": "Punjabuni321",
-  "MAIL_PASSWORD": "whdm wpxa jrar zzvl"
-}
+]
 }
 
