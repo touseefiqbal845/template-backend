@@ -79,8 +79,8 @@
       "dest": "index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "index.js"
+      "src": "/",
+      "dest": "build/index.html"
     },
         {
       "src": "/login",
@@ -168,10 +168,10 @@
   "src": "/reset-password",
   "dest": "build/index.html"
 },
-{
-  "src": "/(.*)",
-  "dest": "index.js"
-}
+      {
+    "src": "/(.+)",
+    "dest": "build/$1"
+  }
 
 
 ]
