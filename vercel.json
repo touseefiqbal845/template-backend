@@ -98,6 +98,13 @@
   "src": "/products",
   "dest": "build/index.html"
 },
+
+    {
+  "src": "/dashboard",
+  "dest": "build/index.html"
+},
+
+
         {
   "src": "/contact-us",
   "dest": "build/index.html"
